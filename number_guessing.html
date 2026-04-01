@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            margin-top: 70px;
+            background-color: rgb(9, 227, 93);
+            
+        }
+
+        .container{
+            background-color: tomato;
+            width: 400px;
+            margin: 0 auto;
+            padding: auto;
+            border-radius: 100%;
+
+        }
+
+
+    
+
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎯 Number Guessing Game🎯</h1>
+    <p>🎯Guess a number 1<=x<=100🎯</p>
+    <p>🎯Enter guess below🎯</p>
+    <p>🎯win cash after five correct guesses🎯</p>
+
+    <input type="number" id="guessInput" placeholder="Enter an integer">
+    <button onclick="checkGuess()">Confirm guess</button>
+
+    <p id="message"></p>
+
+    <footer class="footer">
+    <p>Contact us: info@Number Guessing Game.com | Follow us on social media</p>
+</footer>
+
+    <script>
+        let secretNumber = Math.floor(Math.random() * 100) ;
+        let attempts = 0;
+
+        function checkGuess() {
+            let guess = Number(document.getElementById("guessInput").value);
+            let message = document.getElementById("message");
+            attempts++;
+
+            if (guess < secretNumber) {
+                message.textContent = "Too low!";
+            } else if (guess > secretNumber) {
+                message.textContent = "Too high!";
+            } else {
+                message.textContent = " Congratulationns You got it in " + attempts + " attempts!";
+            }
+        }
+    </script>
+
+</body>
+</html>
